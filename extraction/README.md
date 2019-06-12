@@ -1,3 +1,7 @@
-# Ingestion
+# Extract Reddit Data From Google BigQuery
 
-Use this folder to provide code about your data ingestion, if any.
+## Prerequisites
+
+A Google Cloud Platform JSON key is need for generating files
+
+The key can be generated from https://console.cloud.google.com/apis/credentials/serviceaccountkey.
