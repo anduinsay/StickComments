@@ -22,8 +22,7 @@ class SubredditTask(luigi.WrapperTask):
 
     def get_month_list(self):
         """
-        Creates a list of week start dates by adding 7 days successively
-        to the first day of a year
+        Creates a list of month of the year
         """
         month_length = datetime.timedelta(months=1)
         

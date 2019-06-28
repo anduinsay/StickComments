@@ -1,22 +1,20 @@
-# Project-Title
+# Games'ON 
 
-One line description.
+For gamers, by gamers.
 
 [Link](#) to your presentation.
 
 <hr/>
 
-## How to install and get it up and running
-
-
-<hr/>
-
 ## Introduction
+
+
+## Dataset
+Reddit comments data from Pushshift.io
+Amazon Customer review data from Amazon S3 bucket
+Steam selling ranking data from steam250.com
 
 ## Architecture
 
-## Dataset
-
 ## Engineering challenges
 
-## Trade-offs
