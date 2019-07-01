@@ -13,6 +13,7 @@ Reddit and Steam where developers can learn from gamers about their opinions and
 
 For gamers mean that developers can also satisfy gamers want, make remaster version of games which can satisfy both sales volume and gamers anticipation.
 
+<img src="./img/architecture.png" width="500px"/>
 
 ## Data
 Reddit comments data from [Pushshift.io](https://files.pushshift.io/reddit/).
