@@ -15,6 +15,7 @@ Amazon Customer review data from Amazon S3 bucket
 Steam selling ranking data from steam250.com
 
 ## Architecture
+<img src="./img/architecture.png" width="400px"/>
 
 ## Engineering challenges
 
