@@ -15,6 +15,8 @@ For gamers mean that developers can also satisfy gamers want, make remaster vers
 
 <img src="./img/reddit.png" width="500px"/>
 
+From the activities of the r/gaming community, we want to track more information about what specific games people are talking, then we need integrate more data source to find more detailed information.
+
 ## Data
 Reddit comments data from [Pushshift.io](https://files.pushshift.io/reddit/).
 In this project, I use the data from 2017 to 2015, around 700GB of uncompressed JSON data in total. Defined schema after preprocessing is listed as:
