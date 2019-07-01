@@ -35,5 +35,26 @@ Steam selling ranking data from [steam250](https://steam250.com/). This platform
 ## Architecture
 <img src="./img/architecture.png" width="800px"/>
 
-## Engineering challenges
+- Raw data of Reddit stored on S3 in Year-Month format, load Amazon customer reviews from S3 bucket.
+- Preprocessed Reddit Data, use predefined schema to drop irrelevant results.
+- Spark jobs are run using Luigi for the workflow manager, with results stored in PostgreSQL. 
+- Interactive chart visualization using D3.js  
 
+## Processing Workflow
+
+The raw data is already batched into monthly blocks. Each block is read in from
+S3 as a spark dataframe, irrelevant columns are dropped, and a simple
+tokenization is applied to the 'body' column. This intermediate representation
+of the data is written back to S3 using a similar partition scheme.
+
+The tokenized comments are further prepared for LDA by aggregating the comments
+from a dataframe filtered by subreddit and week. Topic classification is done
+using a StopWordsRemover, CountVectorizer, and LDA pipeline. The output of LDA
+is then made into JSON in prep for access via Flask. The results are stored in a
+postgresql table with the schema `('subreddit', 'week', 'results')`
+
+SparkMLib has an implementation of LDA that is able to use two different types
+of optimization algorithms: expectation-maximization (EM) and online variational
+Bayes (online). Here we employ only the 'online' algorithm, which is generally
+more cost effective, but may require more iterations to yield good
+classifications.
