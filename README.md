@@ -13,7 +13,7 @@ Reddit and Steam where developers can learn from gamers about their opinions and
 
 For gamers mean that developers can also satisfy gamers want, make remaster version of games which can satisfy both sales volume and gamers anticipation.
 
-<img src="./img/reddit.png" width="500px"/>
+<img src="./img/reddit.png" width="700px"/>
 
 From the activities of the r/gaming community, we want to track more information about what specific games people are talking, then we need integrate more data source to find more detailed information.
 
