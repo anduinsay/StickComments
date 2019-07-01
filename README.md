@@ -2,7 +2,7 @@
 
 For gamers, by gamers.
 
-[Link](#) to your presentation.
+[Link](https://docs.google.com/presentation/d/1UiaVdh7vm3-zZy_zAdr0yUroDv7sSAVyL2oXPm6rg1g/edit#slide=id.p) to presentation.
 
 <hr/>
 
