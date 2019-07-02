@@ -10,41 +10,14 @@ var chart_width;
 var chart_height;
 
 
+d3.csv("redditres.csv").then(d => chart(d));
+var days = [...new Set(csv.map(d => d.Quantity))],
+      years  = [...new Set(csv.map(d => d.Month))];
 
-
-var months = [{"Month":"2008", "Quantity": 4.93}, {"Month":"2009","Quantity": 6.28}, 
-{"Month":"2010","Quantity": 6.32}, {"Month":"2011","Quantity":5.69},
-{"Month":"2012","Quantity": 4.55}, {"Month":"2013","Quantity": 4.71},
-{"Month":"2014","Quantity": 3.84}, {"Month":"2015","Quantity": 3.34}];
-
-
-var month_details_2008 = [ { "Day" : "Jan", "Quantity" :3.32 }, { "Day" : "Feb", "Quantity" :3.26 }, 
-{"Day" : "Mar", "Quantity" :3.85}, {"Day" : "Apr", "Quantity" :4.4}, 
-{"Day" : "May", "Quantity" :5.24}, {"Day" : "Jun", "Quantity" :5.4},
-  { "Day" : "Jul", "Quantity" :6.01 }, { "Day" : "Aug", "Quantity" :5.17 },
-  { "Day" : "Sep", "Quantity" :5.3 }, { "Day" : "Oct", "Quantity" :5.47 },
-    { "Day" : "Nov", "Quantity" :5.83 }, { "Day" : "Dec", "Quantity" :5.89 }
-    ];
-
-var month_details_2010 = [ { "Day" : "Jan", "Quantity" :6.56 }, { "Day" : "Feb", "Quantity" :6.3 }, 
-{"Day" : "Mar", "Quantity" :6.96}, {"Day" : "Apr", "Quantity" :6.22}, 
-{"Day" : "May", "Quantity" :6.23}, {"Day" : "Jun", "Quantity" :6.87},
-  { "Day" : "Jul", "Quantity" :6.84 }, { "Day" : "Aug", "Quantity" :6.14 },
-  { "Day" : "Sep", "Quantity" :5.77 }, { "Day" : "Oct", "Quantity" :5.65 },
-    { "Day" : "Nov", "Quantity" :5.93 }, { "Day" : "Dec", "Quantity" :6.37 }
-    ];
-
-var month_details_2013 = [ { "Day" : "Jan", "Quantity" :4.31 }, { "Day" : "Feb", "Quantity" :4.21 }, 
-{"Day" : "Mar", "Quantity" :4.23}, {"Day" : "Apr", "Quantity" :4.07}, 
-{"Day" : "May", "Quantity" :4.55}, {"Day" : "Jun", "Quantity" :6.45},
-  { "Day" : "Jul", "Quantity" :4.91 }, { "Day" : "Aug", "Quantity" :5.06 },
-  { "Day" : "Sep", "Quantity" :4.72 }, { "Day" : "Oct", "Quantity" :4.64 },
-    { "Day" : "Nov", "Quantity" :4.99 }, { "Day" : "Dec", "Quantity" :4.34 }
-    ];
 
 // Starting point of the script execution
 define_chart_dimensions();
-//generate_random_months_data();
+
 draw_chart_of_months(months);
 
 window.onresize = function (){
