@@ -26,6 +26,14 @@ var month_details_2008 = [ { "Day" : "Jan", "Quantity" :3.32 }, { "Day" : "Feb",
     { "Day" : "Nov", "Quantity" :5.83 }, { "Day" : "Dec", "Quantity" :5.89 }
     ];
 
+var month_details_2010 = [ { "Day" : "Jan", "Quantity" :6.56 }, { "Day" : "Feb", "Quantity" :6.3 }, 
+{"Day" : "Mar", "Quantity" :6.96}, {"Day" : "Apr", "Quantity" :6.22}, 
+{"Day" : "May", "Quantity" :6.23}, {"Day" : "Jun", "Quantity" :6.87},
+  { "Day" : "Jul", "Quantity" :6.84 }, { "Day" : "Aug", "Quantity" :6.14 },
+  { "Day" : "Sep", "Quantity" :5.77 }, { "Day" : "Oct", "Quantity" :5.65 },
+    { "Day" : "Nov", "Quantity" :5.93 }, { "Day" : "Dec", "Quantity" :6.37 }
+    ];
+
 var month_details_2013 = [ { "Day" : "Jan", "Quantity" :4.31 }, { "Day" : "Feb", "Quantity" :4.21 }, 
 {"Day" : "Mar", "Quantity" :4.23}, {"Day" : "Apr", "Quantity" :4.07}, 
 {"Day" : "May", "Quantity" :4.55}, {"Day" : "Jun", "Quantity" :6.45},
@@ -111,12 +119,17 @@ function draw_chart_of_days(days){
   g.append("rect").attr("x", function(d,i) {return horizontal_scale(d.Day) + bar_horizontal_margin})
     .attr("y", function(d){return vertical_scale(d.Quantity)})
     .attr("width", bar_width)
+    
+    .on("click", function(d, i) { day_selected(d)})
     .on("mouseover", function(d,i){
         d3.select(this.parentNode).append("text").attr("x", function(d,i) {return horizontal_scale(d.Day) + bar_horizontal_margin + bar_width/2 + 5}).text(d.Quantity).attr("y", function(d){return vertical_scale(d.Quantity) + 15});
       })
     .on("mouseout", function(d,i){
         d3.select(this.parentNode).selectAll("text").remove();
       })
+
+    
+
     .transition().delay(function(d,i){return i * 10})
     .attr("height", function(d){ return chart_height - vertical_scale(d.Quantity)})
     .attr("class", "day_bar");
@@ -137,6 +150,22 @@ function define_chart_dimensions(){
 }
 
 
+function day_selected(day){
+  draw_chart_of_days([]);
+  setTimeout(function(){
+    d3.selectAll(".chart g").remove();
+    d3.select(".chart").append("g");
+    if(day.Day=='Jun'){draw_chart_of_days(month_details_2013);
+      var carName = "Year: 2013 Jun";
+      var gameName = "Games: Bioshock Infinite, HD";
+      var ratings = "Ratings: 95";
+      document.getElementById("demo").innerHTML = (carName+' '+gameName+' '+ratings);}
+    else{draw_chart_of_months(months);}
+    
+   
+  }, 1000);
+}
+
 
 
 function month_selected(month){
@@ -145,6 +174,7 @@ function month_selected(month){
     d3.selectAll(".chart g").remove();
     d3.select(".chart").append("g");
     if(month.Month=='2013'){draw_chart_of_days(month_details_2013);}
+    else if(month.Month=='2010'){draw_chart_of_days(month_details_2010);}
     else{draw_chart_of_days(month_details_2008);}
     
     draw_show_months_button();
