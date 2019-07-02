@@ -49,3 +49,8 @@ The Reddit data is read from S3 as a spark dataframe, drop irrelevant columns an
 of the data is written back to S3 for further data analysis. 
 
 Use Luigi to schedule process the spark jobs month by month, save this result to postgres using jdbc. Steam tables are created in postgres using data from steam250. Filter the tables based on month find by Reddit results, retrieve the top selling games which published in that month. Query the results from Amazon customer reviews database and make a LDA topic modelling results. Visualize the bar charts using D3.js 
+
+<div align="center">
+<img src="./img/architecture.png" width="400px"/>
+<img src="./img/architecture.png" width="400px"/>
+</div>
