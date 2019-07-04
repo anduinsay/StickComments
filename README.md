@@ -1,6 +1,6 @@
 # Games'ON 
 
-For gamers, by gamers. Find hottest games in the past. [Link](https://docs.google.com/presentation/d/1UiaVdh7vm3-zZy_zAdr0yUroDv7sSAVyL2oXPm6rg1g/edit#slide=id.p) to presentation.
+For gamers, by gamers. Find hottest games in the past. [Link](https://docs.google.com/presentation/d/1bKBOQ-OUb8NDQauxHERG-QKo1LjgQbeqVj3Tk6CKYfc/edit#slide=id.p) to presentation.
 
 
 <hr/>
